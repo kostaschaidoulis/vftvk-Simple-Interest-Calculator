@@ -1,4 +1,232 @@
-body {background-color:tan;}
-h1{color:green;}
+/* Set Color For Easy Access */
+:root{
+    --bg-color: black;
+    --main-header: grey;
+    --button-bg-color: grey;
+    --label-text: black;
+    --calculator-container-color: white;
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+    height: 100%;
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+}
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Flex For Centering Form on the page */ 
+.main-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator-container {
+    padding: 2rem;
+    position: absolute;
+    top: 2rem;
+    width: 50%;
+    height: 70%;
+    background-color: var(--calculator-container-color);
+    border-radius: 3rem;
+}
+
+.main-header {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: var(--main-header);
+}
+
+form {
+    margin-top: 2rem;
+    margin-left: 4rem;
+}
+
+.input-container-flex {
+    display: flex;
+    align-items: center;
+}
+
+.input-container-flex:nth-child(2) {
+    margin-top: .5rem;
+}
+
+.input-container-flex:nth-child(3) {
+    margin-top: .5rem;
+}
 
 
+.label-container {
+    width: 30%;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.button-container button {
+    margin-top: -1rem;
+    border:none;
+    outline:none;
+    width: 30%;
+    padding: .5rem;
+    font-size: 1.1em;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--button-bg-color);
+    color: white;
+}
+
+#interest-rate-value {
+    font-size: 1.2em;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 600;
+    margin-top: .5rem;
+    margin-left: 1rem;
+    color: var(--label-text);
+}
+
+.button-container button:hover {
+    cursor: pointer;
+}
+
+.form-range:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 1px #fff,0 0 0 .25rem rgba(16, 19, 175,1);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.amount {
+    border: 1px solid var(--label-text);
+    background-color: white;
+    border-radius: .2rem;
+    width: 17rem;
+}
+
+.amount:focus {
+    border-color: rgba(16, 99, 175, 0.8);
+    box-shadow: 0 0px 2px #fff, 0 0 0 .30rem rgba(16, 99, 175, 0.3);
+    outline: 0 none;
+}
+
+.incorect-input {
+    border: 2px solid #FA251B;
+}
+
+.incorect-input:focus {
+    border-color: rgba(250, 37, 27, 0.8);
+    box-shadow: 0 0px 2px #fff, 0 0 0 .30rem rgba(250, 37, 27, 0.2);
+    outline: 0 none;
+}
+
+.result-container {
+    margin-top: .9rem;
+    width: 50vw;
+    height: 10vh;
+}
+
+#result-text {
+    font-size: 1.1em;
+    color: var(--label-text);
+}
+
+#interest-rate-value {
+    margin-top: -.5rem;
+}
+
+.label {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--label-text);
+}
+
+.select-input {
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+    border-radius: .2rem;
+}
+
+.select-input:hover {
+    cursor: pointer;
+}
+
+.copyright-container {
+    position: absolute;
+    bottom: 1rem;
+}
+
+.copyright-info {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+#slider:hover {
+    cursor: pointer;
+}

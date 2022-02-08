@@ -1,7 +1,14 @@
 <html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web App - Simple Interest Calculator</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>Simple Interest Calculator</h1>
@@ -12,5 +19,74 @@
         Interest : <span id="result"></span><br>
 
         <button onclick="compute()">Compute</button>
+        <main class="main-content">
+            <div class="calculator-container">
+                <h1 class="main-header">Simple Interest Calculator</h1>
+                <form>
+                    <div class="input-container-flex">
+                        <div class="label-container">
+                            <label for="amount" class="label">
+                                Amount
+                            </label>
+                        </div>
+                        <div class="input-container">
+                            <input class="amount" min="1" id="amount" type="number" name="initial-principal" required> 
+                        </div>
+                        <p id="error-message"></p>
+                    </div>
+                    <div class="input-container-flex">
+                        <div class="label-container">
+                            <label class="label">
+                                Interest Rate
+                            </label>
+                        </div>
+                        <div class="input-container">
+                            <input onmousemove="showRate()" name="interest-rate" value="1" id="slider" type="range"  min="1" step="0.5" max="30" >
+                        </div>
+                        <div class="interest-rate-container">
+                            <p id="interest-rate-value">
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="input-container-flex">
+                        <div class="label-container">
+                            <label class="label">
+                                No. of Years
+                            </label>
+                        </div>
+                        <div class="input-container">
+                            <select id="years" name="input-years" class="select-input" aria-label="Default select example">
+                                <option selected>1</option>
+                                <option >2</option>
+                                <option >3</option>
+                                <option >4</option>
+                                <option >5</option>
+                                <option >6</option>
+                                <option >7</option>
+                                <option >8</option>
+                                <option >9</option>
+                                <option >10</option>
+                                <option >15</option>
+                                <option >20</option>
+                                <option >25</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="result-container">
+                        <p id="result-text">
+                            
+                        </p>
+                    </div>
+                    <div class="button-container">
+                        <button class="submit-button" onclick="compute()">Compute</button>
+                    </div>
+                </form>
+                <footer class="copyright-container">
+                    <p class="copyright-info">&copy; Everyone Can Get Rich</p>
+                </footer>
+            </div>
+        </main>
+        <script src="script.js"></script>
     </body>
 </html>
