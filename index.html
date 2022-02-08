@@ -14,7 +14,6 @@
         <main class="main-content">
             <div class="calculator-container">
                 <h1 class="main-header">Simple Interest Calculator</h1>
-                <form>
                     <div class="input-container-flex">
                         <div class="label-container">
                             <label for="amount" class="label">
@@ -22,7 +21,7 @@
                             </label>
                         </div>
                         <div class="input-container">
-                            <input class="amount" min="1" id="amount" type="number" name="initial-principal" required> 
+                            <input  class="amount" min="1" id="principal" type="number" name="initial-principal" required> 
                         </div>
                         <p id="error-message"></p>
                     </div>
@@ -33,7 +32,7 @@
                             </label>
                         </div>
                         <div class="input-container">
-                            <input onmousemove="showRate()" name="interest-rate" value="1" id="slider" type="range"  min="1" step="0.5" max="30" >
+                            <input onchange="showRate()" name="interest-rate" value="1" id="rate" type="range"  min="1" step="0.5" max="20" >
                         </div>
                         <div class="interest-rate-container">
                             <p id="interest-rate-value">
@@ -59,9 +58,6 @@
                                 <option >8</option>
                                 <option >9</option>
                                 <option >10</option>
-                                <option >15</option>
-                                <option >20</option>
-                                <option >25</option>
                               </select>
                         </div>
                     </div>
@@ -73,7 +69,6 @@
                     <div class="button-container">
                         <button class="submit-button" onclick="compute()">Compute</button>
                     </div>
-                </form>
                 <footer class="copyright-container">
                     <p class="copyright-info">&copy; Everyone Can Get Rich</p>
                 </footer>
